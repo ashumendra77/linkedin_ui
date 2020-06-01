@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'homepage.dart';
+
 class MyHomePage extends StatefulWidget {
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -14,6 +16,7 @@ class _MyHomePageState extends State<MyHomePage> {
           child: ListView(
         children: <Widget>[
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -27,7 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       Icons.menu,
                       color: Colors.white,
                     ),
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));},
                   )
                 ],
               ),
@@ -43,6 +46,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   // color: Colors.white,
                   width: MediaQuery.of(context).size.width,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -67,9 +71,12 @@ class _MyHomePageState extends State<MyHomePage> {
                               ),
                             ],
                           ),
-                          Text(
-                            "3d",
-                            style: TextStyle(color: Colors.grey),
+                          Padding(
+                            padding: EdgeInsets.only(top: 18.0),
+                            child: Text(
+                              "3d",
+                              style: TextStyle(color: Colors.grey),
+                            ),
                           )
                         ],
                       ),
@@ -140,7 +147,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               width: 30,
                               child: Icon(
                                 Icons.add,
-                                color: Colors.white,size: 20,
+                                color: Colors.white,
+                                size: 20,
                               ),
                               decoration: BoxDecoration(
                                   color: Color(0xff24284f),
@@ -162,7 +170,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     "Visit",
                                     style: TextStyle(color: Colors.white),
                                   ),
-                                  SizedBox(width:5),
+                                  SizedBox(width: 5),
                                   Icon(Icons.arrow_forward,
                                       color: Colors.white, size: 20),
                                 ],
