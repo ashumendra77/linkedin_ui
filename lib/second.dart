@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        "Check out my new work",
+                        "Check out my new work ✌️",
                         style: TextStyle(color: Colors.white),
                       ),
                       SizedBox(height: 10),
