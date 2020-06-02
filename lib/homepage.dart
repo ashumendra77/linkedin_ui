@@ -23,7 +23,11 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Container(
                     height: 250,
-                    color: Colors.blue,
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(25),
+                            bottomRight: Radius.circular(25))),
                     width: double.infinity,
                     child: Column(
                       children: <Widget>[
@@ -37,7 +41,6 @@ class _HomePageState extends State<HomePage> {
                             Align(
                                 alignment: Alignment.topRight,
                                 child: Icon(Icons.menu, color: Colors.white))
-                            // Icon(Icons.menu,color:Colors.white)
                           ],
                         ),
                         Text(
@@ -51,18 +54,14 @@ class _HomePageState extends State<HomePage> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Icon(Icons.location_on,),
-                            // IconButton(
-                            //   color: Colors.white,
-                            //   icon: Icon(
-                            //     Icons.location_on,
-                            //     size: 20,
-                            //   ),
-                            //   onPressed: () {},
-                            // ),
+                            Icon(
+                              Icons.location_on,
+                              color: Colors.white,
+                              size: 16,
+                            ),
                             Text("San Francisco, CA",
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 12))
+                                    color: Colors.white, fontSize: 13))
                           ],
                         )
                       ],
@@ -130,7 +129,69 @@ class _HomePageState extends State<HomePage> {
                 padding: EdgeInsets.only(left: 45, right: 45),
                 child: Text(
                     "Hi there 👏 I'm Walden, a Product designer living on the west coast."),
-              )
+              ),
+              Row(
+                children: <Widget>[
+                  Row(
+                    children: <Widget>[
+                      Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: AssetImage("images/2.png"),
+                                  fit: BoxFit.fill))),
+                      Column(
+                        children: <Widget>[
+                          Text("Aarogya Setu"),
+                          Text("Designer"),
+                        ],
+                      ),
+                      SizedBox(width: 35),
+                      Container(
+                          height: 60,
+                          width: 60,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              image: DecorationImage(
+                                  image: AssetImage("images/download.png"),
+                                  fit: BoxFit.fill))),
+                      Column(
+                        children: <Widget>[
+                          Text("IDEO"),
+                          Text("Designer"),
+                        ],
+                      ),
+                      SizedBox(width: 50),
+                      //            Container(
+                      // height: 60,
+                      // width: 60,
+                      // decoration: BoxDecoration(
+                      //   borderRadius: BorderRadius.circular(10),
+                      //     image: DecorationImage(
+                      //         image:
+                      //             AssetImage("images/download.png"),fit: BoxFit.fill))),
+                    ],
+                  ),
+                ],
+              ),
+              Padding(
+                padding:  EdgeInsets.only(left:10.0,top:5),
+                child: Row(
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  // mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text("2020"),
+                    Container(height:1,width:120,
+                    margin: EdgeInsets.only(left:10,right:10),
+                    color: Colors.red,
+                    ),
+                    Text("2016")
+                  ],
+                ),
+              ),
+              Text("Activity")
             ],
           )
         ],
