@@ -6,10 +6,108 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  Widget getdetail(){
+    return Container(
+      child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Row(
+          children: <Widget>[
+            Container(
+                height: 60,
+                width: 60,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                        image: AssetImage("images/2.png"), fit: BoxFit.fill))),
+            Padding(
+              padding:  EdgeInsets.only(left:8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    "Aarogya Setu",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  Text(
+                    "Lead Designer",
+                    style: TextStyle(color: Colors.grey,fontSize: 12),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(width: 50),
+            Container(
+                height: 60,
+                width: 60,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                        image: AssetImage("images/download.png"),
+                        fit: BoxFit.fill))),
+            Padding(
+              padding:  EdgeInsets.only(left:8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text("DROPBOX",style: TextStyle(color: Colors.white),),
+                  Text("Designer",style: TextStyle(fontSize:12,color:Colors.grey),),
+                ],
+              ),
+            ),
+            SizedBox(width: 50),
+            Container(
+                height: 60,
+                width: 60,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    image: DecorationImage(
+                        image: AssetImage("images/1.png"),
+                        fit: BoxFit.fill))),
+            Padding(
+              padding:  EdgeInsets.only(left:8.0),
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text("IDEO",style: TextStyle(color: Colors.white),),
+                  Text("Designer",style: TextStyle(color: Colors.grey),),
+                ],
+              ),
+            ),
+            SizedBox(width:50)
+          ],
+        ),
+        Padding(
+          padding: EdgeInsets.only(left: 10.0, top: 5),
+          child: Row(
+            children: <Widget>[
+              Text("NOW"),
+              Container(
+                height: 1,
+                width: 125,
+                margin: EdgeInsets.only(left: 15, right: 10),
+                color: Colors.red,
+              ),
+              Text("2016"),
+              Container(
+                height: 1,
+                width: 125,
+                margin: EdgeInsets.only(left: 15, right: 10),
+                color: Colors.red,
+              ),
+              Text("2014"),
+            ],
+          ),
+        ),
+      ],
+    )
+    );
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       backgroundColor: Color(0xff24284f),
+      backgroundColor: Color(0xff24284f),
       body: SafeArea(
           child: ListView(
         children: <Widget>[
@@ -26,7 +124,9 @@ class _HomePageState extends State<HomePage> {
                     height: 250,
                     decoration: BoxDecoration(
                         color: Colors.blue,
-                        image: DecorationImage(image: AssetImage("images/2.jpeg"),fit: BoxFit.fill),
+                        image: DecorationImage(
+                            image: AssetImage("images/2.jpeg"),
+                            fit: BoxFit.fill),
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(25),
                             bottomRight: Radius.circular(25))),
@@ -130,84 +230,108 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: EdgeInsets.only(left: 45, right: 45),
                 child: Text(
-                    "Hi there 👏 I'm Walden, a Product designer living on the west coast.",style: TextStyle(color:Colors.white),),
-              ),
-              Row(
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                  image: AssetImage("images/2.png"),
-                                  fit: BoxFit.fill))),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: <Widget>[
-                          Text("Aarogya Setu",style: TextStyle(color:Colors.white),),
-                          Text("Designer",style: TextStyle(color:Colors.grey),),
-                        ],
-                      ),
-                      SizedBox(width: 35),
-                      Container(
-                          height: 60,
-                          width: 60,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              image: DecorationImage(
-                                  image: AssetImage("images/download.png"),
-                                  fit: BoxFit.fill))),
-                      Column(
-                        children: <Widget>[
-                          Text("IDEO"),
-                          Text("Designer"),
-                        ],
-                      ),
-                      SizedBox(width: 50),
-                      //            Container(
-                      // height: 60,
-                      // width: 60,
-                      // decoration: BoxDecoration(
-                      //   borderRadius: BorderRadius.circular(10),
-                      //     image: DecorationImage(
-                      //         image:
-                      //             AssetImage("images/download.png"),fit: BoxFit.fill))),
-                    ],
-                  ),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 10.0, top: 5),
-                child: Row(
-                  children: <Widget>[
-                    Text("NOW"),
-                    Container(
-                      height: 1,
-                      width: 125,
-                      margin: EdgeInsets.only(left: 15, right: 10),
-                      color: Colors.red,
-                    ),
-                    Text("2016"),
-                    
-                  ],
+                  "Hi there 👏 I'm Walden, a Product designer living on the west coast.",
+                  style: TextStyle(color: Colors.white),
                 ),
               ),
+              SizedBox(height:15),
+              Container(
+                height: 85,
+                // color: Colors.white,
+                child:ListView(
+                  scrollDirection: Axis.horizontal,
+                  children: <Widget>[Row(
+                  children: <Widget>[
+                    getdetail(),
+                  ],
+                )],)
+              ),
+
+              // Row(
+              //   children: <Widget>[getdetail()],
+              // ),
+
+              // Row(
+              //   children: <Widget>[
+              //     Row(
+              //       children: <Widget>[
+              //         Container(
+              //             height: 60,
+              //             width: 60,
+              //             decoration: BoxDecoration(
+              //                 borderRadius: BorderRadius.circular(10),
+              //                 image: DecorationImage(
+              //                     image: AssetImage("images/2.png"),
+              //                     fit: BoxFit.fill))),
+              //         Column(
+              //           crossAxisAlignment: CrossAxisAlignment.start,
+              //           children: <Widget>[
+              //             Text(
+              //               "Aarogya Setu",
+              //               style: TextStyle(color: Colors.white),
+              //             ),
+              //             Text(
+              //               "Designer",
+              //               style: TextStyle(color: Colors.grey),
+              //             ),
+              //           ],
+              //         ),
+              //         SizedBox(width: 35),
+              //         Container(
+              //             height: 60,
+              //             width: 60,
+              //             decoration: BoxDecoration(
+              //                 borderRadius: BorderRadius.circular(10),
+              //                 image: DecorationImage(
+              //                     image: AssetImage("images/download.png"),
+              //                     fit: BoxFit.fill))),
+              //         Column(
+              //           children: <Widget>[
+              //             Text("IDEO"),
+              //             Text("Designer"),
+              //           ],
+              //         ),
+              //         SizedBox(width: 50),
+              //         //            Container(
+              //         // height: 60,
+              //         // width: 60,
+              //         // decoration: BoxDecoration(
+              //         //   borderRadius: BorderRadius.circular(10),
+              //         //     image: DecorationImage(
+              //         //         image:
+              //         //             AssetImage("images/download.png"),fit: BoxFit.fill))),
+              //       ],
+              //     ),
+              //   ],
+              // ),
+              // Padding(
+              //   padding: EdgeInsets.only(left: 10.0, top: 5),
+              //   child: Row(
+              //     children: <Widget>[
+              //       Text("NOW"),
+              //       Container(
+              //         height: 1,
+              //         width: 125,
+              //         margin: EdgeInsets.only(left: 15, right: 10),
+              //         color: Colors.red,
+              //       ),
+              //       Text("2016"),
+              //     ],
+              //   ),
+              // ),
               Text("Activity"),
               Row(
-                      children: <Widget>[
-                        Container(
-                            height: 160,
-                            width: 200,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25),
-                                image: DecorationImage(
-                                    image: AssetImage("images/5.jpeg"),
-                                    fit: BoxFit.fill)))
-                      ],
-                    )
+                children: <Widget>[
+                  Container(
+                      height: 160,
+                      width: 200,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          image: DecorationImage(
+                              image: AssetImage("images/5.jpeg"),
+                              fit: BoxFit.fill)))
+                ],
+              )
             ],
           )
         ],
