@@ -9,6 +9,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+       backgroundColor: Color(0xff24284f),
       body: SafeArea(
           child: ListView(
         children: <Widget>[
@@ -18,13 +19,14 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   Container(
                     height: 280,
-                    color: Colors.blueGrey,
+                    color: Colors.transparent,
                     width: double.infinity,
                   ),
                   Container(
                     height: 250,
                     decoration: BoxDecoration(
                         color: Colors.blue,
+                        image: DecorationImage(image: AssetImage("images/2.jpeg"),fit: BoxFit.fill),
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(25),
                             bottomRight: Radius.circular(25))),
@@ -35,7 +37,7 @@ class _HomePageState extends State<HomePage> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             CircleAvatar(
-                              backgroundImage: AssetImage("assetName"),
+                              backgroundImage: AssetImage("images/6.jpeg"),
                               radius: 35,
                             ),
                             Align(
@@ -76,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                         width: 200,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Colors.white,
+                          color: Color(0xff7286b2),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -86,12 +88,12 @@ class _HomePageState extends State<HomePage> {
                                 Text(
                                   "MASSAGE",
                                   style: TextStyle(
-                                      color: Color(0xff004d84), fontSize: 12),
+                                      color: Colors.white, fontSize: 12),
                                 ),
                                 SizedBox(width: 5),
                                 Icon(
                                   Icons.message,
-                                  color: Color(0xff004d84),
+                                  color: Colors.white,
                                   size: 17,
                                 )
                               ],
@@ -102,20 +104,20 @@ class _HomePageState extends State<HomePage> {
                                 Text(
                                   "CONNECT",
                                   style: TextStyle(
-                                      color: Color(0xff004d84), fontSize: 12),
+                                      color: Colors.white, fontSize: 12),
                                 ),
                                 SizedBox(width: 5),
                                 Container(
-                                    height: 18,
-                                    width: 20,
+                                    height: 15,
+                                    width: 15,
                                     child: Icon(
                                       Icons.add,
-                                      color: Colors.white,
+                                      color: Color(0xff7286b6),
                                       size: 15,
                                     ),
                                     decoration: BoxDecoration(
-                                        color: Color(0xff004d84),
-                                        border: Border.all(color: Colors.white),
+                                        color: Colors.white,
+                                        // border: Border.all(color: Colors.white),
                                         shape: BoxShape.circle)),
                               ],
                             )
@@ -128,7 +130,7 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: EdgeInsets.only(left: 45, right: 45),
                 child: Text(
-                    "Hi there 👏 I'm Walden, a Product designer living on the west coast."),
+                    "Hi there 👏 I'm Walden, a Product designer living on the west coast.",style: TextStyle(color:Colors.white),),
               ),
               Row(
                 children: <Widget>[
@@ -143,9 +145,10 @@ class _HomePageState extends State<HomePage> {
                                   image: AssetImage("images/2.png"),
                                   fit: BoxFit.fill))),
                       Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text("Aarogya Setu"),
-                          Text("Designer"),
+                          Text("Aarogya Setu",style: TextStyle(color:Colors.white),),
+                          Text("Designer",style: TextStyle(color:Colors.grey),),
                         ],
                       ),
                       SizedBox(width: 35),
@@ -179,33 +182,32 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: EdgeInsets.only(left: 10.0, top: 5),
                 child: Row(
-                  // crossAxisAlignment: CrossAxisAlignment.center,
-                  // mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Text("2020"),
+                    Text("NOW"),
                     Container(
                       height: 1,
-                      width: 120,
-                      margin: EdgeInsets.only(left: 10, right: 10),
+                      width: 125,
+                      margin: EdgeInsets.only(left: 15, right: 10),
                       color: Colors.red,
                     ),
                     Text("2016"),
-                    Row(
+                    
+                  ],
+                ),
+              ),
+              Text("Activity"),
+              Row(
                       children: <Widget>[
                         Container(
-                            height: 120,
+                            height: 160,
                             width: 200,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(25),
                                 image: DecorationImage(
-                                    image: AssetImage("5.jpeg"),
+                                    image: AssetImage("images/5.jpeg"),
                                     fit: BoxFit.fill)))
                       ],
                     )
-                  ],
-                ),
-              ),
-              Text("Activity")
             ],
           )
         ],
