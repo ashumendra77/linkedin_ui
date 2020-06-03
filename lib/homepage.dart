@@ -81,21 +81,28 @@ class _HomePageState extends State<HomePage> {
           padding: EdgeInsets.only(left: 10.0, top: 5),
           child: Row(
             children: <Widget>[
-              Text("NOW"),
+              Text("NOW",style: TextStyle(color:Colors.white),),
               Container(
                 height: 1,
-                width: 125,
+                width: 150,
                 margin: EdgeInsets.only(left: 15, right: 10),
-                color: Colors.red,
+                color: Color(0xff565a83),
               ),
-              Text("2016"),
+              Text("2016",style: TextStyle(color:Colors.white),),
               Container(
                 height: 1,
-                width: 125,
+                width: 128,
                 margin: EdgeInsets.only(left: 15, right: 10),
-                color: Colors.red,
+                color: Color(0xff565a83),
               ),
-              Text("2014"),
+              Text("Start",style: TextStyle(color:Colors.white),),
+              // Container(
+              //   height: 1,
+              //   width: 128,
+              //   margin: EdgeInsets.only(left: 15, right: 10),
+              //   color: Color(0xff565a83),
+              // ),
+              // Text("Start",style: TextStyle(color:Colors.white),),
             ],
           ),
         ),
@@ -112,6 +119,7 @@ class _HomePageState extends State<HomePage> {
           child: ListView(
         children: <Widget>[
           Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Stack(
                 children: <Widget>[
@@ -242,7 +250,10 @@ class _HomePageState extends State<HomePage> {
                   scrollDirection: Axis.horizontal,
                   children: <Widget>[Row(
                   children: <Widget>[
-                    getdetail(),
+                    Padding(
+                      padding:  EdgeInsets.only(left:10.0,right: 5),
+                      child: getdetail(),
+                    ),
                   ],
                 )],)
               ),
@@ -319,7 +330,8 @@ class _HomePageState extends State<HomePage> {
               //     ],
               //   ),
               // ),
-              Text("Activity"),
+              Text("Activity",style: TextStyle(color:Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
+              SizedBox(height:10),
               Row(
                 children: <Widget>[
                   Container(
