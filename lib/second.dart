@@ -54,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           Row(
                             children: <Widget>[
                               CircleAvatar(
-                                  backgroundImage: AssetImage("assetName")),
+                                  backgroundImage: AssetImage("images/images.png")),
                               SizedBox(width: 10),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -88,7 +88,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Colors.yellowAccent,
                             borderRadius: BorderRadius.circular(20),
                             image: DecorationImage(
-                                image: AssetImage("assetName"),
+                                image: AssetImage("images/images.png"),
                                 fit: BoxFit.fill)),
                       ),
                       SizedBox(height: 10),
@@ -183,6 +183,61 @@ class _MyHomePageState extends State<MyHomePage> {
           )
         ],
       )),
+      bottomNavigationBar: Container(
+          height: 80,
+          width: double.infinity,
+          decoration: BoxDecoration(
+            color: Color(0xff555e7b),
+              borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25), topRight: Radius.circular(25))),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: <Widget>[
+              IconButton(
+                icon: Icon(
+                  Icons.home,
+                  size: 30,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
+              ),
+              IconButton(
+                icon: Icon(
+                  Icons.work,size: 30,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
+              ),
+              FloatingActionButton(
+                elevation: 10,
+                backgroundColor: Colors.white,
+                onPressed: () {},
+                child: Icon(Icons.add,size: 35, color: Colors.black),
+              ),
+              IconButton(
+                icon: Icon(
+                  Icons.search,size: 30,
+                  color: Colors.white,
+                ),
+                onPressed: () {},
+              ),
+              Stack(children: <Widget>[
+              Container(
+                width: 45,
+                // color: Colors.white,
+                child:Stack(children: <Widget>[
+                   CircleAvatar(backgroundImage: AssetImage("assetName"),),
+                Positioned(
+                  right: 0,
+                  child: CircleAvatar( radius: 10,    backgroundColor: Colors.red,child:Center(child: Text("3"))))
+                ],)
+              )
+
+              ],)
+               
+              
+            ],
+          )),
     );
   }
 }

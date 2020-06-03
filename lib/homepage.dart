@@ -189,7 +189,19 @@ class _HomePageState extends State<HomePage> {
                       margin: EdgeInsets.only(left: 10, right: 10),
                       color: Colors.red,
                     ),
-                    Text("2016")
+                    Text("2016"),
+                    Row(
+                      children: <Widget>[
+                        Container(
+                            height: 120,
+                            width: 200,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                image: DecorationImage(
+                                    image: AssetImage("5.jpeg"),
+                                    fit: BoxFit.fill)))
+                      ],
+                    )
                   ],
                 ),
               ),
@@ -202,7 +214,7 @@ class _HomePageState extends State<HomePage> {
           height: 80,
           width: double.infinity,
           decoration: BoxDecoration(
-            color: Color(0xff555e7b),
+              color: Color(0xff555e7b),
               borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(25), topRight: Radius.circular(25))),
           child: Row(
@@ -218,7 +230,8 @@ class _HomePageState extends State<HomePage> {
               ),
               IconButton(
                 icon: Icon(
-                  Icons.work,size: 30,
+                  Icons.work,
+                  size: 30,
                   color: Colors.white,
                 ),
                 onPressed: () {},
@@ -227,30 +240,36 @@ class _HomePageState extends State<HomePage> {
                 elevation: 10,
                 backgroundColor: Colors.white,
                 onPressed: () {},
-                child: Icon(Icons.add,size: 35, color: Colors.black),
+                child: Icon(Icons.add, size: 35, color: Colors.black),
               ),
               IconButton(
                 icon: Icon(
-                  Icons.search,size: 30,
+                  Icons.search,
+                  size: 30,
                   color: Colors.white,
                 ),
                 onPressed: () {},
               ),
-              Stack(children: <Widget>[
-              Container(
-                width: 45,
-                // color: Colors.white,
-                child:Stack(children: <Widget>[
-                   CircleAvatar(backgroundImage: AssetImage("assetName"),),
-                Positioned(
-                  right: 0,
-                  child: CircleAvatar( radius: 10,    backgroundColor: Colors.red,child:Center(child: Text("3"))))
-                ],)
+              Stack(
+                children: <Widget>[
+                  Container(
+                      width: 45,
+                      // color: Colors.white,
+                      child: Stack(
+                        children: <Widget>[
+                          CircleAvatar(
+                            backgroundImage: AssetImage("assetName"),
+                          ),
+                          Positioned(
+                              right: 0,
+                              child: CircleAvatar(
+                                  radius: 10,
+                                  backgroundColor: Colors.red,
+                                  child: Center(child: Text("3"))))
+                        ],
+                      ))
+                ],
               )
-
-              ],)
-               
-              
             ],
           )),
     );
