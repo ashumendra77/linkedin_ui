@@ -25,7 +25,7 @@ class Linkedin {
 List<Linkedin> linked = [
   Linkedin(
       activity: ["images/2.jpeg", "images/3.jpeg", "images/4.jpeg"],
-      name: "Walden Parker",
+      name: "Jacob Parker",
       imagurl: "images/2.png",
       occ: "Designer Product",
       like: 36,
@@ -43,7 +43,7 @@ List<Linkedin> linked = [
       location: "San Frencisco, CA"),
   Linkedin(
       activity: ["images/2.jpeg", "images/3.jpeg", "images/4.jpeg"],
-      name: "Walden Parker",
+      name: "Disel Parker",
       imagurl: "images/2.png",
       occ: "Designer Product",
       like: 36,

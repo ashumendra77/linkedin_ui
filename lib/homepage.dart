@@ -1,15 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:linkedin_ui/model/detail.dart';
 
 class HomePage extends StatefulWidget {
+  final Linkedin linkobject;
+  HomePage({@required this.linkobject});
   @override
   _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
+  List<String> activitylist = [
+    "images/4.jpeg",
+    "images/5.jpeg",
+    "images/6.jpeg"
+  ];
 
-  Widget getdetail(){
+  Widget getdetail() {
     return Container(
-      child: Column(
+        child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Row(
@@ -22,7 +30,7 @@ class _HomePageState extends State<HomePage> {
                     image: DecorationImage(
                         image: AssetImage("images/2.png"), fit: BoxFit.fill))),
             Padding(
-              padding:  EdgeInsets.only(left:8.0),
+              padding: EdgeInsets.only(left: 8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -32,7 +40,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   Text(
                     "Lead Designer",
-                    style: TextStyle(color: Colors.grey,fontSize: 12),
+                    style: TextStyle(color: Colors.grey, fontSize: 12),
                   ),
                 ],
               ),
@@ -47,12 +55,18 @@ class _HomePageState extends State<HomePage> {
                         image: AssetImage("images/download.png"),
                         fit: BoxFit.fill))),
             Padding(
-              padding:  EdgeInsets.only(left:8.0),
+              padding: EdgeInsets.only(left: 8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("DROPBOX",style: TextStyle(color: Colors.white),),
-                  Text("Designer",style: TextStyle(fontSize:12,color:Colors.grey),),
+                  Text(
+                    "DROPBOX",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  Text(
+                    "Designer",
+                    style: TextStyle(fontSize: 12, color: Colors.grey),
+                  ),
                 ],
               ),
             ),
@@ -63,39 +77,54 @@ class _HomePageState extends State<HomePage> {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                     image: DecorationImage(
-                        image: AssetImage("images/1.png"),
-                        fit: BoxFit.fill))),
+                        image: AssetImage("images/1.png"), fit: BoxFit.fill))),
             Padding(
-              padding:  EdgeInsets.only(left:8.0),
-              child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+              padding: EdgeInsets.only(left: 8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Text("IDEO",style: TextStyle(color: Colors.white),),
-                  Text("Designer",style: TextStyle(color: Colors.grey),),
+                  Text(
+                    "IDEO",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  Text(
+                    "Designer",
+                    style: TextStyle(color: Colors.grey),
+                  ),
                 ],
               ),
             ),
-            SizedBox(width:50)
+            SizedBox(width: 50)
           ],
         ),
         Padding(
           padding: EdgeInsets.only(left: 10.0, top: 5),
           child: Row(
             children: <Widget>[
-              Text("NOW",style: TextStyle(color:Colors.white),),
+              Text(
+                "NOW",
+                style: TextStyle(color: Colors.white),
+              ),
               Container(
                 height: 1,
                 width: 150,
                 margin: EdgeInsets.only(left: 15, right: 10),
                 color: Color(0xff565a83),
               ),
-              Text("2016",style: TextStyle(color:Colors.white),),
+              Text(
+                "2016",
+                style: TextStyle(color: Colors.white),
+              ),
               Container(
                 height: 1,
                 width: 128,
                 margin: EdgeInsets.only(left: 15, right: 10),
                 color: Color(0xff565a83),
               ),
-              Text("Start",style: TextStyle(color:Colors.white),),
+              Text(
+                "Start",
+                style: TextStyle(color: Colors.white),
+              ),
               // Container(
               //   height: 1,
               //   width: 128,
@@ -107,10 +136,30 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ],
-    )
-    );
-
+    ));
   }
+
+  Widget getactivity(int index) {
+    return Row(
+      children: <Widget>[
+        Container(
+            // padding: EdgeInsets.only(bottom:10),
+            height: 160,
+            width: 200,
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(25),
+                image: DecorationImage(
+                    image: AssetImage(activitylist[index]), fit: BoxFit.fill))),
+        SizedBox(width: 15, height: 10)
+      ],
+    );
+  }
+
+  void mystyle() {
+    color:
+    Colors.white;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,17 +197,15 @@ class _HomePageState extends State<HomePage> {
                               backgroundImage: AssetImage("images/6.jpeg"),
                               radius: 35,
                             ),
-                            Align(
-                                alignment: Alignment.topRight,
-                                child: Icon(Icons.menu, color: Colors.white))
+                            Icon(Icons.menu, color: Colors.white)
                           ],
                         ),
                         Text(
-                          "Walden Parker",
+                          widget.linkobject.name,
                           style: TextStyle(color: Colors.white, fontSize: 22),
                         ),
                         Text(
-                          "Designer Product",
+                          widget.linkobject.occ,
                           style: TextStyle(color: Colors.white, fontSize: 16),
                         ),
                         Row(
@@ -169,7 +216,7 @@ class _HomePageState extends State<HomePage> {
                               color: Colors.white,
                               size: 16,
                             ),
-                            Text("San Francisco, CA",
+                            Text(widget.linkobject.location,
                                 style: TextStyle(
                                     color: Colors.white, fontSize: 13))
                           ],
@@ -188,48 +235,51 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(20),
                           color: Color(0xff7286b2),
                         ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  "MASSAGE",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 12),
-                                ),
-                                SizedBox(width: 5),
-                                Icon(
-                                  Icons.message,
-                                  color: Colors.white,
-                                  size: 17,
-                                )
-                              ],
-                            ),
-                            SizedBox(width: 20),
-                            Row(
-                              children: <Widget>[
-                                Text(
-                                  "CONNECT",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 12),
-                                ),
-                                SizedBox(width: 5),
-                                Container(
-                                    height: 15,
-                                    width: 15,
-                                    child: Icon(
-                                      Icons.add,
-                                      color: Color(0xff7286b6),
-                                      size: 15,
-                                    ),
-                                    decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        // border: Border.all(color: Colors.white),
-                                        shape: BoxShape.circle)),
-                              ],
-                            )
-                          ],
+                        child: Padding(
+                          padding: EdgeInsets.only(left: 25.0, right: 25),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Text(
+                                    "MASSAGE",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  ),
+                                  SizedBox(width: 5),
+                                  Icon(
+                                    Icons.message,
+                                    color: Colors.white,
+                                    size: 17,
+                                  )
+                                ],
+                              ),
+                              SizedBox(width: 20),
+                              Row(
+                                children: <Widget>[
+                                  Text(
+                                    "CONNECT",
+                                    style: TextStyle(
+                                        color: Colors.white, fontSize: 12),
+                                  ),
+                                  SizedBox(width: 5),
+                                  Container(
+                                      height: 15,
+                                      width: 15,
+                                      child: Icon(
+                                        Icons.add,
+                                        color: Color(0xff7286b6),
+                                        size: 15,
+                                      ),
+                                      decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          // border: Border.all(color: Colors.white),
+                                          shape: BoxShape.circle)),
+                                ],
+                              )
+                            ],
+                          ),
                         )),
                   ),
                 ],
@@ -238,25 +288,27 @@ class _HomePageState extends State<HomePage> {
               Padding(
                 padding: EdgeInsets.only(left: 45, right: 45),
                 child: Text(
-                  "Hi there 👏 I'm Walden, a Product designer living on the west coast.",
+                  "Hi there 👏 I'm Walden, ${widget.linkobject.name} a Product designer living on the west coast.",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
-              SizedBox(height:15),
+              SizedBox(height: 15),
               Container(
-                height: 85,
-                // color: Colors.white,
-                child:ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: <Widget>[Row(
-                  children: <Widget>[
-                    Padding(
-                      padding:  EdgeInsets.only(left:10.0,right: 5),
-                      child: getdetail(),
-                    ),
-                  ],
-                )],)
-              ),
+                  height: 85,
+                  // color: Colors.white,
+                  child: ListView(
+                    scrollDirection: Axis.horizontal,
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Padding(
+                            padding: EdgeInsets.only(left: 10.0, right: 5),
+                            child: getdetail(),
+                          ),
+                        ],
+                      )
+                    ],
+                  )),
 
               // Row(
               //   children: <Widget>[getdetail()],
@@ -330,20 +382,27 @@ class _HomePageState extends State<HomePage> {
               //     ],
               //   ),
               // ),
-              Text("Activity",style: TextStyle(color:Colors.white,fontSize: 18,fontWeight: FontWeight.bold),),
-              SizedBox(height:10),
-              Row(
-                children: <Widget>[
-                  Container(
-                      height: 160,
-                      width: 200,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          image: DecorationImage(
-                              image: AssetImage("images/5.jpeg"),
-                              fit: BoxFit.fill)))
-                ],
-              )
+              Text(
+                "Activity",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+              SizedBox(height: 10),
+              Container(
+                  height: 160,
+                  // margin: EdgeInsets.symmetric(horizontal:15),
+                  child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: activitylist
+                          .toList()
+                          .asMap()
+                          .entries
+                          .map((MapEntry map) {
+                        return getactivity(map.key);
+                      }).toList())),
+              SizedBox(height: 10)
             ],
           )
         ],
@@ -396,7 +455,7 @@ class _HomePageState extends State<HomePage> {
                       child: Stack(
                         children: <Widget>[
                           CircleAvatar(
-                            backgroundImage: AssetImage("assetName"),
+                            backgroundImage: AssetImage("images/4.jpeg"),
                           ),
                           Positioned(
                               right: 0,

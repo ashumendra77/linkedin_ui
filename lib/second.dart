@@ -65,15 +65,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   ],
                 ),
                 SizedBox(height: 15),
-                Container(
-                  height: 180,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                      color: Colors.yellowAccent,
-                      borderRadius: BorderRadius.circular(20),
-                      image: DecorationImage(
-                          image: AssetImage("images/images.png"),
-                          fit: BoxFit.fill)),
+                InkWell(
+                  onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage(linkobject: link,)));},
+                                  child: Container(
+                    height: 180,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                        color: Colors.yellowAccent,
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                            image: AssetImage("images/images.png"),
+                            fit: BoxFit.fill)),
+                  ),
                 ),
                 SizedBox(height: 10),
                 Text(
@@ -190,10 +193,10 @@ class _MyHomePageState extends State<MyHomePage> {
                         color: Colors.white,
                       ),
                       onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => HomePage()));
+                        // Navigator.push(
+                        //     context,
+                        //     MaterialPageRoute(
+                        //         builder: (context) => HomePage()));
                       },
                     )
                   ],
