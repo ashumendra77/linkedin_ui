@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:linkedin_ui/second.dart';
 
 void main() => runApp(MyApp());

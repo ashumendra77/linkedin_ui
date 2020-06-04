@@ -10,9 +10,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   List<String> activitylist = [
-    "images/4.jpeg",
-    "images/5.jpeg",
-    "images/6.jpeg"
+    "images/a1.jpeg",
+    "images/a2.jpeg",
+    "images/a3.jpeg"
   ];
 
   Widget getdetail() {
@@ -125,13 +125,6 @@ class _HomePageState extends State<HomePage> {
                 "Start",
                 style: TextStyle(color: Colors.white),
               ),
-              // Container(
-              //   height: 1,
-              //   width: 128,
-              //   margin: EdgeInsets.only(left: 15, right: 10),
-              //   color: Color(0xff565a83),
-              // ),
-              // Text("Start",style: TextStyle(color:Colors.white),),
             ],
           ),
         ),
@@ -143,7 +136,6 @@ class _HomePageState extends State<HomePage> {
     return Row(
       children: <Widget>[
         Container(
-            // padding: EdgeInsets.only(bottom:10),
             height: 160,
             width: 200,
             decoration: BoxDecoration(
@@ -153,11 +145,6 @@ class _HomePageState extends State<HomePage> {
         SizedBox(width: 15, height: 10)
       ],
     );
-  }
-
-  void mystyle() {
-    color:
-    Colors.white;
   }
 
   @override
@@ -182,7 +169,7 @@ class _HomePageState extends State<HomePage> {
                     decoration: BoxDecoration(
                         color: Colors.blue,
                         image: DecorationImage(
-                            image: AssetImage("images/2.jpeg"),
+                            image: AssetImage("images/pp.jpeg"),
                             fit: BoxFit.fill),
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(25),
@@ -190,15 +177,25 @@ class _HomePageState extends State<HomePage> {
                     width: double.infinity,
                     child: Column(
                       children: <Widget>[
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            CircleAvatar(
-                              backgroundImage: AssetImage("images/6.jpeg"),
-                              radius: 35,
-                            ),
-                            Icon(Icons.menu, color: Colors.white)
-                          ],
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Align(
+                            alignment: Alignment.topRight,
+                            child: Icon(Icons.menu, color: Colors.white),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.all(8.0),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              CircleAvatar(
+                                backgroundImage:
+                                    AssetImage(widget.linkobject.imagurl),
+                                radius: 35,
+                              ),
+                            ],
+                          ),
                         ),
                         Text(
                           widget.linkobject.name,
@@ -274,7 +271,6 @@ class _HomePageState extends State<HomePage> {
                                       ),
                                       decoration: BoxDecoration(
                                           color: Colors.white,
-                                          // border: Border.all(color: Colors.white),
                                           shape: BoxShape.circle)),
                                 ],
                               )
@@ -286,16 +282,15 @@ class _HomePageState extends State<HomePage> {
               ),
               SizedBox(height: 5),
               Padding(
-                padding: EdgeInsets.only(left: 45, right: 45),
+                padding: EdgeInsets.only(left: 40, right: 40),
                 child: Text(
-                  "Hi there 👏 I'm Walden, ${widget.linkobject.name} a Product designer living on the west coast.",
+                  "Hi there 👏 I'm ${widget.linkobject.name} a Product designer living on the west coast.",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
               SizedBox(height: 15),
               Container(
                   height: 85,
-                  // color: Colors.white,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: <Widget>[
@@ -309,99 +304,32 @@ class _HomePageState extends State<HomePage> {
                       )
                     ],
                   )),
-
-              // Row(
-              //   children: <Widget>[getdetail()],
-              // ),
-
-              // Row(
-              //   children: <Widget>[
-              //     Row(
-              //       children: <Widget>[
-              //         Container(
-              //             height: 60,
-              //             width: 60,
-              //             decoration: BoxDecoration(
-              //                 borderRadius: BorderRadius.circular(10),
-              //                 image: DecorationImage(
-              //                     image: AssetImage("images/2.png"),
-              //                     fit: BoxFit.fill))),
-              //         Column(
-              //           crossAxisAlignment: CrossAxisAlignment.start,
-              //           children: <Widget>[
-              //             Text(
-              //               "Aarogya Setu",
-              //               style: TextStyle(color: Colors.white),
-              //             ),
-              //             Text(
-              //               "Designer",
-              //               style: TextStyle(color: Colors.grey),
-              //             ),
-              //           ],
-              //         ),
-              //         SizedBox(width: 35),
-              //         Container(
-              //             height: 60,
-              //             width: 60,
-              //             decoration: BoxDecoration(
-              //                 borderRadius: BorderRadius.circular(10),
-              //                 image: DecorationImage(
-              //                     image: AssetImage("images/download.png"),
-              //                     fit: BoxFit.fill))),
-              //         Column(
-              //           children: <Widget>[
-              //             Text("IDEO"),
-              //             Text("Designer"),
-              //           ],
-              //         ),
-              //         SizedBox(width: 50),
-              //         //            Container(
-              //         // height: 60,
-              //         // width: 60,
-              //         // decoration: BoxDecoration(
-              //         //   borderRadius: BorderRadius.circular(10),
-              //         //     image: DecorationImage(
-              //         //         image:
-              //         //             AssetImage("images/download.png"),fit: BoxFit.fill))),
-              //       ],
-              //     ),
-              //   ],
-              // ),
-              // Padding(
-              //   padding: EdgeInsets.only(left: 10.0, top: 5),
-              //   child: Row(
-              //     children: <Widget>[
-              //       Text("NOW"),
-              //       Container(
-              //         height: 1,
-              //         width: 125,
-              //         margin: EdgeInsets.only(left: 15, right: 10),
-              //         color: Colors.red,
-              //       ),
-              //       Text("2016"),
-              //     ],
-              //   ),
-              // ),
-              Text(
-                "Activity",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold),
+              SizedBox(height: 15),
+              Padding(
+                padding: EdgeInsets.only(left: 15.0),
+                child: Text(
+                  "Activity",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
               SizedBox(height: 10),
-              Container(
-                  height: 160,
-                  // margin: EdgeInsets.symmetric(horizontal:15),
-                  child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      children: activitylist
-                          .toList()
-                          .asMap()
-                          .entries
-                          .map((MapEntry map) {
-                        return getactivity(map.key);
-                      }).toList())),
+              Padding(
+                padding: EdgeInsets.only(left: 15.0),
+                child: Container(
+                    height: 160,
+                    child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: activitylist
+                            .toList()
+                            .asMap()
+                            .entries
+                            .map((MapEntry map) {
+                          return getactivity(map.key);
+                        }).toList())),
+              ),
               SizedBox(height: 10)
             ],
           )
@@ -451,11 +379,10 @@ class _HomePageState extends State<HomePage> {
                 children: <Widget>[
                   Container(
                       width: 45,
-                      // color: Colors.white,
                       child: Stack(
                         children: <Widget>[
                           CircleAvatar(
-                            backgroundImage: AssetImage("images/4.jpeg"),
+                            backgroundImage: AssetImage("images/pic5.jpeg"),
                           ),
                           Positioned(
                               right: 0,
