@@ -168,9 +168,9 @@ class _HomePageState extends State<HomePage> {
                     height: 250,
                     decoration: BoxDecoration(
                         color: Colors.blue,
-                        image: DecorationImage(
-                            image: AssetImage("images/pp.jpeg"),
-                            fit: BoxFit.fill),
+                        // image: DecorationImage(
+                        //     image: AssetImage("images/pp.jpeg"),
+                        //     fit: BoxFit.fill),
                         borderRadius: BorderRadius.only(
                             bottomLeft: Radius.circular(25),
                             bottomRight: Radius.circular(25))),
